@@ -25,3 +25,13 @@ html, body *:hover {
 .gatsby-image-wrapper [data-main-image] {
   border-radius: var(--radius-sm);
 } */
+
+.visually-hidden {
+  border: 0;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
