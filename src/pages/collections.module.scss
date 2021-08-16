@@ -1,0 +1,118 @@
+.collectionsContainer {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.collectionsHeader {
+  font-size: var(--text-4xl);
+  font-weight: var(--bold);
+  letter-spacing: var(--tracked);
+  color: var(--grey-10);
+  padding: var(--space-2xl) ;
+  padding-top: calc(1 * var(--size-input));
+  @media (max-width: 1024px) {
+    padding-top: var(--size-gutter-raw);
+  }
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.collectionDetail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .collectionTitle {
+    width: 90%;
+    font-size: var(--text-header);
+    font-weight: var(--light);
+    letter-spacing: var(--even);
+    padding: var(--size-input) 0;
+    text-align: center;
+    @media (max-width: 1024px) {
+      padding-top: var(--size-gutter);
+    }
+  }
+  .collectionBlurb {
+    width: 90%;
+    font-size: var(--text-prose);
+    letter-spacing: var(--tracked);
+    p {
+      margin: var(--space-md);
+    }
+    em {
+      font-weight: var(--bold);
+    }
+  }
+}
+
+
+.photosGrid {
+  padding-top: var(--size-input);
+  display: grid;
+  gap: var(--space-md);
+  grid-template-rows: repeat(11, 60vh);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 
+    "p1a p1a p1a p1a p1a"
+    "p2a p2a p2b p2b p2b"
+    "p3a p3a p3a p3b p3b"
+    "p4a p4a p4b p4b p4b"
+    "p5a p5a p5a p5b p5b"
+    "p6a p6a p6a p6a p6a"
+    "p7a p7a p7b p7b p7b"
+    "p8a p8a p8a p8a p8a"
+    "p9a p9a p9b p9b p9b"
+    "p9zA p9zA p9zA p9zA p9zA"
+    "p9zAa p9zAa p9zAa p9zAb p9zAb"
+  ;
+  @media (max-width: 1024px) {
+    grid-template-rows: repeat(11, 30vh);
+  }
+}
+
+.photoWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  [data-gatsby-image-wrapper],
+  [data-gatsby-image-wrapper] div,
+  [data-gatsby-image-wrapper] img {
+    height: 100%;
+    min-width: 100%;
+  }
+}
+
+.featuredProductsSection {
+  padding: var(--size-input) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.featuredHeader {
+  padding: var(--size-input );
+  font-size: var(--text-header);
+  font-weight: var(--light);
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.featuredProductsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: var(--product-grid);
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+} 
+

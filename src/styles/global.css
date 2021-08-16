@@ -1,0 +1,27 @@
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  letter-spacing: 1px;
+  transition: all ease-in-out 0.2s;
+}
+
+html::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* html, body * {
+  cursor: none !important;
+}
+
+html, body *:hover {
+  cursor: none !important;
+} */
+
+.gatsby-image-wrapper {
+  margin: auto;
+  position: unset;
+}
+/* 
+.gatsby-image-wrapper [data-main-image] {
+  border-radius: var(--radius-sm);
+} */

@@ -1,0 +1,76 @@
+.navStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  white-space: nowrap;
+  font-weight: var(--medium);
+}
+
+.dropDownBtn {
+  padding: var(--space-sm);
+  transform: translateY(2px);
+}
+
+.navLink {
+  position: relative;
+  cursor: pointer;
+  height: var(--size-input);
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  text-transform: lowercase;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: var(--space-md);
+    margin-top: var(--space-sm);
+    height: 2px;
+    width: 10px;
+    background-color: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition-2);
+  }
+}
+
+.navLink:hover {
+  color: var(--text-color);
+  color: var(--primary);
+}
+
+.activeLink,
+.navLink[aria-active="page"] {
+  color: var(--text-color-secondary);
+  /* text-decoration: underline; */
+  /* text-decoration-thickness: 2px; */
+  /* text-underline-offset: 4px; */
+  color: var(--text-color);
+  color: var(--primary);
+  font-weight: var(--bold);
+  transform-origin: left;
+  transition: var(--transition-2);
+
+  &::after {
+    // transform: scaleX(1);
+  }
+}
+
+.activeLink:hover,
+.navLink[aria-active="page"]:hover {
+  // color: var(--text-color-secondary);
+  
+  &::after {
+    // transform: scaleX(1);
+    // content: "";
+    // margin-top: var(--space-sm);
+    // height: 1px;
+    // width: 80%;
+    // background-color: var(--text-color-secondary);
+  }
+}

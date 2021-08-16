@@ -1,0 +1,36 @@
+.loading {
+  grid-area: main;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  background: linear-gradient(-45deg, #f1f1f1, #5d80af42, #23a5d518, #ffffffa1);
+  background-size: 400% 400%;
+  background-blend-mode: difference;
+	animation: gradient 2s ease infinite;
+  background-size: 8000px 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    transform: translateY(-100%);
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -15px;
+    font-size: 10rem;
+    color: var(--primary);
+    opacity: 0.5;
+    mix-blend-mode: difference;
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

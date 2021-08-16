@@ -1,0 +1,186 @@
+:root {
+  /* tokens */
+  /* font-family */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-body: "Mulish", sans-serif, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* palette */
+  --black-fade-5: rgba(0, 0, 0, 0.05);
+  --black-fade-10: rgba(0, 0, 0, 0.1);
+  --black-fade-20: rgba(0, 0, 0, 0.2);
+  --black-fade-40: rgba(0, 0, 0, 0.4);
+  --black-fade-80: rgba(0, 0, 0, 0.8);
+  --grey-90: #232129;
+  --grey-90: #363636;
+  --grey-50: #78757a;
+  --grey-40: #99979b;
+  --grey-10: hsl(270, 2%, 90%);
+  --grey-5: #fafafa;
+  --green-80: #088413;
+  --green-50-rgb: 55, 182, 53;
+  --pink-80: #f8cbd2;
+  --sun-80: #edbc00;
+  --kiss-80: #ff2f4e;
+  --ocean-80: #2391b4;
+  --ocean-80: #80b5cd;
+  --green-50-rgb: 55, 182, 53;
+  --white: #ffffff;
+
+  /* z-indeces */
+  /* z-indeces */
+  --base-two: -200;
+  --base-one: -100;
+  --ground: auto;
+  --level-one: 100;
+  --level-two: 200;
+  --level-three: 300;
+  --level-four: 400;
+  --level-five: 500;
+  --level-six: 600;
+  --level-seven: 700;
+  --level-eight: 800;
+  --level-nine: 900;
+  --level-top: 999;
+
+  /* radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 48px;
+  --radius-rounded: 999px;
+
+  /* spacing */
+  --space-xs: 2px;
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+
+  /* viewport-spacing */
+  --vp-sm: 2.5vh;
+  --vp-md: 5vh;
+  --vp-lg: 9vh;
+  --vp-xl: 13vh;
+
+  /* line-height */
+  --solid: 1;
+  --dense: 1.25;
+  --default: 1.5;
+  --loose: 2;
+
+  /* letter-spacing */
+  --loose: 0.25em;
+  --even: 0.15em;
+  --tracked: 0.075em;
+  --tight: -0.015em;
+
+  /* font-weight */
+  --light: 200;
+  --body: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+
+  /* font-size */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 48px;
+
+  /* role-based tokens */
+
+  /* colors */
+  --primary: var(--ocean-80);
+  --background: var(--white);
+  --border: var(--black-fade-5);
+
+  /* transitions */
+  --transition: box-shadow 0.125s ease-in;
+  --transition-std: all 1s ease-in-out;
+  --transition-2: all 0.3s ease-in-out;
+
+  /* shadows */
+  --shadow: 4px 4px 12px var(--black-fade-10);
+
+  /* text */
+  /* color */
+  --text-color: var(--grey-90);
+  --text-color-secondary: var(--grey-50);
+  --text-color-inverted: var(--white);
+  /* size */
+  --text-hero: var(--text-4xl);
+  --text-header: var(--text-3xl);
+  --text-display: var(--text-2xl);
+  --text-prose: var(--text-md);
+
+  /* input */
+  --input-background: var(--black-fade-5);
+  --input-background-hover: var(--black-fade-5);
+  --input-border: var(--black-fade-5);
+  --input-text: var(--text-color);
+  --input-text-disabled: var(--black-fade-40);
+  --input-ui: var(--text-color-secondary);
+  --input-ui-active: (--text-color);
+
+  /* size */
+  --size-input: var(--space-4xl);
+  --size-gap: 12px;
+  --size-gutter-raw: var(--space-2xl);
+  --size-gutter: calc(var(--size-gutter-raw) - 12px);
+  --size-icon: var(--space-2xl);
+
+  /* product */
+  --product-grid: 1fr;
+
+  /* breakpoints */
+  --phone: 425px;
+  --phoneLarge: 640px;
+  --tabletSmall: 768px;
+  --tablet: 1024px;
+  --desktop: 1280px;
+  --desktopLarge: 1920px;
+}
+
+/* role-based token adjustments per breakpoint */
+@media (min-width: 640px) {
+  :root {
+    --product-grid: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-display: var(--text-3xl);
+    --text-prose: var(--text-lg);
+    --product-grid: repeat(3, 1fr);
+    --size-gutter-raw: var(--space-3xl);
+    --size-gap: var(--space-2xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --product-grid: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    /* - og size --vp-sm: 2.5vh; */
+    --vp-sm: 3vh;
+    /* - og size --vp-md: 5vh; */
+    --vp-md: 6vh;
+    /* - og size --vp-lg: 9vh; */
+    --vp-lg: 11vh;
+    /* - og size --vp-xl: 13vh; */
+    --vp-xl: 15vh;
+  }
+}

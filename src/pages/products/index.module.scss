@@ -1,0 +1,11 @@
+.title {
+  padding: calc(1 * var(--size-input)) var(--space-2xl);
+  font-size: var(--text-hero);
+  font-weight: var(--bold);
+  letter-spacing: var(--tracked);
+  text-transform: lowercase;
+  color: var(--grey-10);
+  @media (max-width: 1024px) {
+    padding-top: var(--size-gutter-raw);
+  }
+}

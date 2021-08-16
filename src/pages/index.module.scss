@@ -1,0 +1,134 @@
+.collage {
+  display: grid;
+  gap: var(--space-3xl);
+  grid-template-rows: repeat(6, 60vh);
+  grid-template-columns: 100%;
+  gap: var(--space-3xl);
+  
+  @media (max-width: 1024px) {
+    grid-template-rows: repeat(6, 40vh);
+    gap: var(--space-2xl);
+  }
+}
+
+.collageRow {
+  display: grid;
+  gap: var(--space-3xl);
+  grid-template-rows: 100%;
+  grid-template-columns: 4fr 3fr;
+  &:nth-child(2n) {
+    grid-template-columns: 3fr 4fr;
+  }
+  @media (max-width: 1024px) {
+    gap: var(--space-2xl);
+  }
+}
+
+.photo {
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    [data-gatsby-image-wrapper] img {
+      transform: scale(1.05) !important;
+    }
+    .toCollection {
+      opacity: .6;
+    }
+  }
+  div {
+    height: 100%;
+    width: 100%;
+  }
+  img {
+    object-fit: contain;
+    object-position: center;
+    transition: all 2.5s ease-in-out !important;
+  }
+  .toCollection {
+    cursor: pointer;
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    font-weight: var(--light);
+    letter-spacing: var(--even);
+    color: var(--white);
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: var(--transition-std);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .container {
+//   padding-left: var(--size-gutter-raw);
+//   padding-right: var(--size-gutter-raw);
+//   padding-top: var(--space-lg);
+//   padding-bottom: var(--space-3xl);
+//   max-width: 76ch;
+// }
+
+// .intro {
+//   padding-bottom: var(--space-lg);
+//   line-height: var(--dense);
+//   font-size: var(--text-display);
+//   color: var(--text-color-secondary);
+// }
+
+// .callOut {
+//   padding-bottom: var(--space-lg);
+//   font-size: var(--text-display);
+//   font-weight: var(--bold);
+//   line-height: var(--dense);
+//   line-height: var(--dense);
+//   letter-spacing: var(--tight);
+//   color: var(--text-color-secondary);
+// }
+
+// .callOut > strong {
+//   text-decoration: underline;
+// }
+
+// .callToAction {
+//   font-size: var(--text-prose);
+//   line-height: var(--dense);
+//   line-height: var(--dense);
+//   letter-spacing: var(--tight);
+//   color: var(--text-color-secondary);
+// }
+
+// .deployButton {
+//   margin-top: var(--space-lg);
+// }
