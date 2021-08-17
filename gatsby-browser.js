@@ -1,6 +1,7 @@
 import * as React from "react"
 import { StoreProvider } from "./src/context/store-context"
 import { CursorProvider } from './src/context/cursor-context';
+import { LayoutProvider } from './src/context/layout-context';
 import { Auth0Provider } from "@auth0/auth0-react"
 import { navigate } from "gatsby"
 import {

@@ -26,6 +26,7 @@
     "cross-env": "^7.0.3",
     "debounce": "^1.2.1",
     "dotenv": "^8.5.1",
+    "focus-trap-react": "^8.7.1",
     "gatsby": "^3.4.1",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
     "gatsby-plugin-image": "^1.4.0",
