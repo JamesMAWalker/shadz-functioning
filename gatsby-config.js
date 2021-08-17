@@ -32,13 +32,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-instagram-all`,
-    //   options: {
-    //     access_token:
-    //       "IGQVJWdEhyOVk4SmpJUXhuWVpIS1R4UWM2aFpSdlRoUjAtVHVGVnFYdXJUM0ZAlaTNLZAzl2UkhZAd1RtOWZADYVgzai1ycklpUk9LZAml4S0VTckgxaWIzUk05aGVNSjYzZAWRSU2NucTc2ZAzdNSWRQQmdUXwZDZD",
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN,
+      },
+    },
     "gatsby-plugin-ngrok-tunneling",
     "gatsby-plugin-transition-link",
     "gatsby-plugin-image",

@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useRef } from "react"
 import debounce from "lodash.debounce"
 
 import { CursorContext } from '../context/cursor-context';
-import { cursorStyles, product, productButton, collection, collectionButton } from "./custom-cursor.module.scss"
+// import { cursorStyles, product, productButton, collection, collectionButton } from "./custom-cursor.module.scss"
+import { cursorStyles, product, productButton } from "./custom-cursor.module.scss"
 
 export const CustomCursor = ({ cursorState }) => {
   
@@ -11,7 +12,7 @@ export const CustomCursor = ({ cursorState }) => {
   const cursorShapeGetter = (params) => {
     let cursorShape
     if (cursorState?.type === "onProduct") cursorShape = product
-    if (cursorState?.type === "onCollection") cursorShape = collection
+    // if (cursorState?.type === "onCollection") cursorShape = collection
     
     return cursorShape
   }
@@ -44,9 +45,9 @@ export const CustomCursor = ({ cursorState }) => {
           <span>View Product</span>
         )}
       </div>
-      <div className={collectionButton} style={{ cursor: "none !important" }}>
+      {/* <div className={collectionButton} style={{ cursor: "none !important" }}>
         View <br />
-      </div>
+      </div> */}
     </div>
   )
 }

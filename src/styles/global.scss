@@ -35,3 +35,18 @@ html, body *:hover {
   margin: 0;
   padding: 0;
 }
+
+.tl-edges {
+  height: 100% !important;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+}
+
+.tl-edges::-webkit-scrollbar {
+  display: none !important;
+}
+
+.tl-edges .tl-wrapper {
+  height: 100%;
+  width: 100%;
+}

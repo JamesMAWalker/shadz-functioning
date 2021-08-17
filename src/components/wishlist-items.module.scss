@@ -20,6 +20,7 @@
 
 .wishlistContainer {
   display: grid;
+  gap: var(--space-xl) var(--space-lg);
   grid-template-columns: var(--product-grid);
 }
 
