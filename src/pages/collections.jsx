@@ -19,7 +19,7 @@ import {
   featuredProductsGrid,
 } from "./collections.module.scss"
 
-const Collections = ({ data: { allFile: { edges: photos }, shopifyCollection } }) => {
+export default function Collections({ data: { allFile: { edges: photos }, shopifyCollection } }) {
 
   return (
     <section className={collectionsContainer}>
@@ -86,7 +86,7 @@ const Collections = ({ data: { allFile: { edges: photos }, shopifyCollection } }
   )
 }
 
-export default Collections
+// export default Collections
 
 export const collectionQuery = graphql`
   query CollectionQuery {

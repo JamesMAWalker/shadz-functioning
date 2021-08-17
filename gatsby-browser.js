@@ -14,7 +14,7 @@ import fetch from "isomorphic-fetch"
 // styles
 import "./src/styles/reset.css"
 import "./src/styles/variables.css"
-import "./src/styles/global.css"
+import "./src/styles/global.scss"
 import { scrollWrap } from './src/layouts/index.module.scss';
 
 const httpLink = new HttpLink({

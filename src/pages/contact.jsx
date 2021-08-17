@@ -4,7 +4,7 @@ import Logo from '../icons/logo'
 
 import { contactSection, contactHeader, contactInfo, contactAddress } from './contact.module.scss'
 
-const Contact = () => {
+export default function Contact() {
   
   return (
     <section className={contactSection}>
@@ -33,5 +33,3 @@ const Contact = () => {
     </section>
   )
 }
-
-export default Contact
