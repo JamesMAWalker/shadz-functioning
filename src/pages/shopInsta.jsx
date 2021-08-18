@@ -14,7 +14,7 @@ import {
   loadMoreButton,
 } from "./shopInsta.module.scss"
 
-const ShopInsta = ({ data, transitionStatus }) => {
+const ShopInsta = ({ data }) => {
   const {
     allInstagramContent: { edges: allPosts },
   } = data
@@ -45,26 +45,6 @@ const ShopInsta = ({ data, transitionStatus }) => {
     }
   }, [modalOpen, isMobile])
 
-  // Page Transition
-  useEffect(() => {
-    // set default state
-    gsap.to(".page-container--insta", {
-      delay: 0.5,
-      autoAlpha: 1,
-    })
-
-    if (transitionStatus === "entering") {
-      gsap.from(".page-container--insta", {
-        delay: 0.5,
-        autoAlpha: 0,
-      })
-    } else if (transitionStatus === "exiting") {
-      gsap.to(".page-container--insta", {
-        autoAlpha: 0,
-      })
-    }
-  }, [transitionStatus])
-
   // set modal content
   const getProductFromPost = (caption) => {
     return variants.filter(({ node: v }) => {
@@ -83,8 +63,10 @@ const ShopInsta = ({ data, transitionStatus }) => {
       return
     }
     setCurPost(post)
+    
     setTimeout(() => {
       setModalOpen(true)
+      
     }, 200)
   }
 

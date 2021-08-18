@@ -58,7 +58,7 @@ export const InstaModal = ({ hideModal, post, getProductFromPost }) => {
   )
 
   const animateModalClose = () => {
-    gsap.to(".mobile-modal", {
+    gsap.to(".modal-container", {
       opacity: 0,
       y: "-20vh",
       duration: 0.5,
@@ -92,14 +92,16 @@ export const InstaModal = ({ hideModal, post, getProductFromPost }) => {
   }, [isMobile])
 
   useEffect(() => {
-    setTimeout(() => {
-      gsap.to(".mobile-modal", {
-        opacity: 1,
-        y: 0,
-        ease: "expo.inOut",
-        duration: 0.5,
-      })
-    }, 200)
+    if (modalOpen) {
+      setTimeout(() => {
+        gsap.to(".modal-container", {
+          opacity: 1,
+          y: 0,
+          ease: "expo.inOut",
+          duration: 0.5,
+        })
+      }, 200)
+    }
   }, [modalOpen])
 
   const timeComponents = post.timestamp.split("-")
@@ -108,7 +110,7 @@ export const InstaModal = ({ hideModal, post, getProductFromPost }) => {
     <>
       {!isMobile ? (
         <FocusTrap active={modalOpen}>
-          <div className={instaModal}>
+          <div className={`${instaModal} modal-container`}>
             <section
               className={postImage}
               aria-label={`insta post showing ${productInPost.displayName}`}
@@ -122,10 +124,10 @@ export const InstaModal = ({ hideModal, post, getProductFromPost }) => {
                   tabIndex={0}
                   aria-role="button"
                   aria-label="close insta modal"
-                  onClick={hideModal}
+                  onClick={animateModalClose}
                   onKeyDown={(e) => {
                     if (e.key === "Escape") {
-                      hideModal()
+                      animateModalClose()
                     }
                   }}
                 >
@@ -215,7 +217,7 @@ export const InstaModal = ({ hideModal, post, getProductFromPost }) => {
         <>
           <FocusTrap active={modalOpen}>
             <div
-              className={`${mobileInstaModal} mobile-modal`}
+              className={`${mobileInstaModal} modal-container`}
               onClick={animateModalClose}
             >
               <div className={mImageSection}>
