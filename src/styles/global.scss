@@ -21,6 +21,11 @@ html, body *:hover {
   margin: auto;
   position: unset;
 }
+
+[data-gatsby-image-wrapper] {
+  max-height: 100%;
+  max-width: 100%;
+}
 /* 
 .gatsby-image-wrapper [data-main-image] {
   border-radius: var(--radius-sm);
