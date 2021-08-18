@@ -45,7 +45,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
   return (
     <nav className={mobileNavStyle} onTouchStart={menuToggleTest}>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         key="products"
         className={`menu-link ${navLink}`}
@@ -70,7 +70,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
       {typesVisible &&
         productTypes.map((name) => (
           <AniLink
-            cover
+            cover="true"
             bg="var(--primary)"
             key={name}
             className={`menu-link ${navLink}`}
@@ -85,7 +85,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
           </AniLink>
         ))}
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         key="collections"
         className={`menu-link ${navLink}`}
@@ -96,7 +96,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
         collections
       </AniLink>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         key="insta"
         className={`menu-link ${navLink}`}
@@ -107,7 +107,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
         shop insta
       </AniLink>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         key="faces"
         className={`menu-link ${navLink}`}
@@ -118,7 +118,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
         face shapes
       </AniLink>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         key="contact"
         className={`menu-link ${navLink}`}

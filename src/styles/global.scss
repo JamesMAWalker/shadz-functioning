@@ -3,6 +3,9 @@ body {
   color: var(--text-color);
   letter-spacing: 1px;
   transition: all ease-in-out 0.2s;
+  & > * {
+    -webkit-tap-highlight-color: transparent; 
+  }
 }
 
 html::-webkit-scrollbar {

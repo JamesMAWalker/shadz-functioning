@@ -41,7 +41,7 @@ export function Navigation({ className }) {
         onMouseOutCapture={() => setTypesVisible(false)}
       >
         <AniLink
-          cover
+          cover="true"
           bg="var(--primary)"
           duration={1}
           // direction="right"
@@ -54,7 +54,7 @@ export function Navigation({ className }) {
         </AniLink>
         {productTypes.map((name) => (
           <Link
-            cover
+            cover="true"
             bg="var(--primary)"
             duration={1}
             key={name}
@@ -77,7 +77,7 @@ export function Navigation({ className }) {
         ))}
       </nav>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         duration={1}
         key="collections"
@@ -87,7 +87,7 @@ export function Navigation({ className }) {
         collections
       </AniLink>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         duration={1}
         key="shopInsta"
@@ -98,7 +98,7 @@ export function Navigation({ className }) {
         shopInsta
       </AniLink>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         duration={1}
         key="face"
@@ -108,7 +108,7 @@ export function Navigation({ className }) {
         face shapes
       </AniLink>
       <AniLink
-        cover
+        cover="true"
         bg="var(--primary)"
         duration={1}
         key="contact"

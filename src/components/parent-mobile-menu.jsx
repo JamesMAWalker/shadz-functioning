@@ -108,7 +108,7 @@ export const MobileMenu = ({ menuOpen, toggleMenu }) => {
       <div className={`${mobileMenu} mobile-menu`}>
         <div className={`${menuHeader} menu-header`}>
           <div className={logoWrapper}>
-            <AniLink cover bg="var(--primary)" to="/">
+            <AniLink cover="true" bg="var(--primary)" to="/">
               <div onClick={conditionalClose}>
                 <Logo />
               </div>
