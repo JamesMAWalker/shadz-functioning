@@ -47,6 +47,7 @@ html, body *:hover {
 
 .tl-edges {
   height: 100% !important;
+  min-height: -webkit-fill-available;
   scrollbar-color: transparent transparent;
   scrollbar-width: none;
 }

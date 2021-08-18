@@ -36,7 +36,7 @@
 .instaModal {
   z-index: var(--level-three);
   position: fixed;
-  height: 100vh;
+  min-height: -webkit-fill-available;
   width: 67.1vw;
   top: 0;
   left: 19vw;
@@ -218,6 +218,8 @@
   left: 0;
   height: calc(95vh - var(--space-md));
   height: calc(100 * var(--mVh));
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   width: calc(100% - (var(--space-xl) * 2) );;
   width: 100vw;
   padding-bottom: var(--vp-lg);
@@ -256,7 +258,7 @@
     }
   }
   .mProductSection {
-    min-height: 35vh;
+    min-height: 45vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -303,7 +305,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 20vh;
+    min-height: 30vh;
     p {
       width: 80%;
       text-align: center;
@@ -316,6 +318,7 @@
     align-items: center;
     justify-content: center;
     font-weight: var(--bold);
+    padding: var(--space-md);
     span {
       &:not(:last-child) {
         margin-right: var(--space-md);
@@ -336,5 +339,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: var(--vp-lg);
   }
 }
