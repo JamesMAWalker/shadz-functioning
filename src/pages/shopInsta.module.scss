@@ -1,6 +1,7 @@
 .instaContainer {
   position: relative;
   display: grid;
+  min-height: -webkit-fill-available;
   gap: var(--space-xs);
   grid-template-columns: var(--product-grid);
   @media (max-width: 1024px) {

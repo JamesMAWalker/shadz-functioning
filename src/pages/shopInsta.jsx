@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { LayoutContext } from '../context/layout-context'
+import { LayoutContext } from "../context/layout-context"
 import gsap from "gsap"
 
 // Components
-import { InstaModal } from '../components/instaModal'
+import { InstaModal } from "../components/instaModal"
+
+// Utils
+import { useWindowSize } from '../utils/hooks';
 
 // Styles
 import {
@@ -21,21 +24,17 @@ const ShopInsta = ({ data }) => {
   const {
     allShopifyProductVariant: { edges: variants },
   } = data
-
-  const [postList, setPostList] = useState([...allPosts.slice(0, 26)])
-  const [curPost, setCurPost] = useState(postList[0].node)
-  const [isMobile, setIsMobile] = useState(false)
+  
+  const { width: windowWidth } = useWindowSize()
+  const [isMobile, setIsMobile] = useState(true && (1024 < windowWidth))
   const { modalOpen, setModalOpen } = useContext(LayoutContext)
-
+  
+  const [postList, setPostList] = useState([...allPosts.slice(0, 11)])
+  const [curPost, setCurPost] = useState(postList[0].node)
+  
   useEffect(() => {
-    const tabBP = parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--tablet",
-        10
-      )
-    )
-    setIsMobile(window.innerWidth <= tabBP)
-  }, [isMobile])
+    setIsMobile(windowWidth <= 1024)
+  }, [windowWidth])
 
   useEffect(() => {
     if (modalOpen && !isMobile) {
@@ -45,8 +44,10 @@ const ShopInsta = ({ data }) => {
     }
   }, [modalOpen, isMobile])
 
+
   // set modal content
   const getProductFromPost = (caption) => {
+    // dev version: return variants[8]
     return variants.filter(({ node: v }) => {
       return caption
         .toLowerCase()
@@ -63,10 +64,9 @@ const ShopInsta = ({ data }) => {
       return
     }
     setCurPost(post)
-    
+
     setTimeout(() => {
       setModalOpen(true)
-      
     }, 200)
   }
 
@@ -110,12 +110,18 @@ const ShopInsta = ({ data }) => {
             aria-label="instagram thumbnail"
             aria-modal="true"
           >
-            <GatsbyImage alt={`instagram post caption: ${thisPost.caption.slice(0, 50)}`} image={postImageData} />
+            <GatsbyImage
+              alt={`instagram post caption: ${thisPost.caption.slice(0, 50)}`}
+              image={postImageData}
+            />
           </div>
         )
       })}
       <div className={loadMoreButton}>
-        <button onClick={handleLoadMore} aria-label="load more instagram posts button">
+        <button
+          onClick={handleLoadMore}
+          aria-label="load more instagram posts button"
+        >
           <span>Load</span>
           <span>More</span>
           <span>+</span>
