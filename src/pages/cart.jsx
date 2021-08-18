@@ -10,7 +10,6 @@ import {
   summaryDetails,
   subTotal,
   taxTotal,
-  shipping,
   grandTotal,
   checkoutButton,
   checkoutButtonWrapper,
@@ -35,7 +34,8 @@ export default function CartPage() {
           <div className={emptyStateContainer}>
             <h1 className={emptyStateHeading}>Your cart is empty</h1>
             <p>
-              Looks like you haven’t found anything yet. Sometimes it’s hard to choose! Maybe this helps :)
+              Looks like you haven’t found anything yet. Sometimes it’s hard to
+              choose! Maybe this helps :)
             </p>
             <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
               View trending products
@@ -69,12 +69,12 @@ export default function CartPage() {
                       {formatPrice(
                         checkout.totalTaxV2.currencyCode,
                         checkout.totalTaxV2.amount
-                      )}
+                        )}
                     </span>
                   </div>
-                  <div className={shipping}>
-                    <span>Shipping:</span>
-                    <span>Calculated at Checkout</span>
+                  <div>
+                    <span>Shipping: &nbsp;</span>
+                    <span style={{ textAlign: "right" }} >Calculated @ Checkout</span>
                   </div>
                 </div>
                 <div className={checkoutButtonWrapper}>

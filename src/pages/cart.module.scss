@@ -5,93 +5,6 @@
   padding: var(--space-2xl) var(--space-2xl);
 }
 
-// .table {
-//   flex: 1;
-//   max-width: 1024px;
-//   margin: auto;
-//   width: 100%;
-//   display: grid;
-//   grid-template-columns: 48px 1fr min-content;
-//   gap: var(--space-md) var(--space-2xl);
-//   @media (max-width: 1024px) {
-//     max-width: 100vw;
-//   }
-// }
-
-// .table th {
-//   text-align: left;
-//   text-transform: uppercase;
-//   font-size: var(--text-xs);
-//   padding-bottom: var(--space-2xl);
-// }
-
-// .table tr,
-// .table thead,
-// .table tbody {
-//   display: contents;
-// }
-
-// .wrap {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: stretch;
-//   padding: 0 var(--size-gutter-raw);
-// }
-
-// .totals,
-// .table th.totals {
-//   text-align: right;
-//   @media (max-width: 1024px) {
-//     text-align: left;
-//     margin-left: var(--vp-md);
-//   }
-// }
-
-// .summary {
-//   font-weight: var(--semibold);
-//   font-size: var(--text-lg);
-// }  
-
-// /* Apply only to first of class */
-// .summary td {
-//   padding-top: var(--space-3xl);
-// }
-
-// .summary ~ .summary td {
-//   padding-top: 0;
-// }
-
-// .summary .labelColumn {
-//   grid-column-start: 1;
-//   grid-column-end: 2;
-// }
-
-// .summary .totals {
-//   grid-column-start: 2;
-//   grid-column-end: 4;
-// }
-
-// .grandTotal .labelColumn {
-//   // grid-column-start: 1;
-//   // grid-column-end: 3;
-// }
-
-// .collapseColumn {
-//   display: none;
-// }
-
-// .productHeader {
-//   grid-column-start: 1;
-//   grid-column-end: 3;
-// }
-
-// .imageHeader {
-//   // position: fixed;
-//   width: 0;
-//   height: 0;
-//   overflow: hidden;
-// }
-
 .emptyStateContainer {
   text-align: center;
   max-width: 48ch;
@@ -120,32 +33,6 @@
   margin-top: var(--space-xl);
   font-size: var(--text-xl);
 }
-
-@media (min-width: 640px) {
-//   .summary .labelColumn,
-//   .summary .totals,
-//   .grandTotal .labelColumn {
-//     // grid-column-start: auto;
-//     // grid-column-end: auto;
-//   }
-
-//   .collapseColumn {
-//     display: block;
-//   }
-
-//   .table {
-//     grid-template-columns: 80px 1fr repeat(3, min-content);
-//   }
-// }
-
-// @media (min-width: 1024px) {
-//   .table {
-//     grid-template-columns: max-content 1fr repeat(3, max-content);
-//   }
-}
-
-
-
 
 .cartGrid {
   position: relative;
@@ -216,7 +103,8 @@
   @media (max-width: 1024px) {
     width: 100%;
     padding: var(--vp-md);
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: flex-start;
   }
 }
 
