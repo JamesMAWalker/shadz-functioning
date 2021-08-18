@@ -40,16 +40,18 @@ export const wrapRootElement = ({ element }) => {
 
   return (
     <StoreProvider>
-      <CursorProvider>
-        <Auth0Provider
-          domain={domain}
-          clientId={clientId}
-          redirectUri={callback}
-          onRedirectCallback={onRedirectCallback}
-        >
-          <ApolloProvider client={client}>{element}</ApolloProvider>
-        </Auth0Provider>
-      </CursorProvider>
+      <LayoutProvider>
+        <CursorProvider>
+          <Auth0Provider
+            domain={domain}
+            clientId={clientId}
+            redirectUri={callback}
+            onRedirectCallback={onRedirectCallback}
+          >
+            <ApolloProvider client={client}>{element}</ApolloProvider>
+          </Auth0Provider>
+        </CursorProvider>
+      </LayoutProvider>
     </StoreProvider>
   )
 }
