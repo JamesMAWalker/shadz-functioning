@@ -7,7 +7,7 @@ const defaultValues = {
 
 export const LayoutContext = createContext(defaultValues)
 
-export const LayoutContextProvider = ({ children }) => {
+export const LayoutProvider = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (

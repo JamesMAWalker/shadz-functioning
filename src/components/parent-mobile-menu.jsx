@@ -1,5 +1,6 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import { StoreContext } from "../context/store-context"
+import { LayoutContext } from '../context/layout-context';
 import gsap from 'gsap'
 import { Link } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
@@ -50,7 +51,8 @@ const MenuButton = ({ toggleMenu, menuOpen }) => {
 }
 
 export const MobileMenu = ({ menuOpen, toggleMenu }) => {
-  const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
+  const { checkout, loading, didJustAddToCart } = useContext(StoreContext)
+  const { modalOpen } = useContext(LayoutContext)
 
   // checkout functionality
   const items = checkout ? checkout.lineItems : []
@@ -76,6 +78,28 @@ export const MobileMenu = ({ menuOpen, toggleMenu }) => {
         menuCloseAnimation(menuTl, menuOpen)
       }
   }, [menuOpen])
+
+  useEffect(() => {
+    if (modalOpen) {
+      gsap.to(".mobile-menu", {
+        opacity: 0,
+        duration: 0.5,
+      })
+      gsap.to(".mobile-menu", {
+        delay: 0.5,
+        zIndex: -1,
+      })
+    } else {
+      gsap.to(".mobile-menu", {
+        zIndex: 200,
+      })
+      gsap.to(".mobile-menu", {
+        duration: 0.5,
+        delay: 0.5,
+        opacity: 1,
+      })
+    }
+  }, [modalOpen])
 
   
 
