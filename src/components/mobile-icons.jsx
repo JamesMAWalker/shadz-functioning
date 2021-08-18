@@ -25,7 +25,7 @@ export function MobileIcons({ toggleMenu }) {
   return (
     <div className={mobileIcons}>
       <div className={internal} onClick={toggleMenu} >
-        <AniLink cover bg="var(--primary)" to="/search" className={mobileIcon}>
+        <AniLink cover="true" bg="var(--primary)" to="/search" className={mobileIcon}>
           <SearchIcon />
         </AniLink>
         <CartButton quantity={quantity} />

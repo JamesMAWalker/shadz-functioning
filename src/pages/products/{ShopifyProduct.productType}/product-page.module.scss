@@ -280,6 +280,10 @@
   width: 80%;
   justify-content: flex-start;
   // padding-bottom: var(--space-lg);
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
 
 .colorOption {
@@ -288,6 +292,9 @@
   height: var(--text-md);
   width: var(--text-md);
   border-radius: var(--radius-rounded);
+  @media (max-width: 1024px) {
+    margin-bottom: var(--space-lg);
+  }
 }
 
 .activeColorOption {
@@ -359,8 +366,6 @@
     margin-bottom: var(--size-gap);
   }
 }
-
-
 
 // --OLD CODE -- //
 

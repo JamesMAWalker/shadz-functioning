@@ -56,4 +56,15 @@
     opacity: 0;
     transition: var(--transition-std);
   }
+  .transitionShade {
+    pointer-events: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 47, 94);
+    opacity: 0;
+  }
 }
