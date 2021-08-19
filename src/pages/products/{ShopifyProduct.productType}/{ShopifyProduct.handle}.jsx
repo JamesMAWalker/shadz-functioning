@@ -74,26 +74,6 @@ export default function Product({
     setIsMobile(window.innerWidth <= 1024)
   }, [isMobile, windowSize])
 
-  // transition animation
-  // useEffect(() => {
-  //   // set default state
-  //   gsap.to(".page-container--product", {
-  //     // delay: .5,
-  //     autoAlpha: 1,
-  //   })
-
-  //   if (transitionStatus === "entering") {
-  //     gsap.from(".page-container--product", {
-  //       // delay: .5,
-  //       autoAlpha: 0,
-  //     })
-  //   } else if (transitionStatus === "exiting") {
-  //     gsap.to(".page-container--product", {
-  //       autoAlpha: 0,
-  //     })
-  //   }
-  // }, [transitionStatus])
-
   const {
     options,
     variants,
@@ -355,7 +335,8 @@ export default function Product({
                     <span
                       tabIndex={0}
                       role="button"
-                      onClick={addRemoveFromWishlist}
+                      // onClick={addRemoveFromWishlist}
+                      onTouchStart={isMobile && addRemoveFromWishlist}
                       aria-label={
                         itemInWishlist
                           ? `${variant.title} in wishlist, click to remove`
