@@ -1,0 +1,130 @@
+.faceShapesContainer {
+  height: max-content;
+  width: 100%;
+  min-height: -webkit-fill-available;
+}
+
+.faceShapeDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align-last: left;
+  padding: var(--size-gutter-raw);
+  padding-top: 0;
+
+  .detailsHeader {
+    font-size: var(--text-hero);
+    padding-bottom: var(--size-input);
+  }
+  .detailsContent {
+    font-size: var(--text-prose);
+    letter-spacing: var(--tracked);
+  }
+}
+
+.faceShapeBlock {
+  padding-top: var(--size-input);
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 25vh);
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minMax(40vh, max-content));
+  }
+  &.picLeft {
+    grid-template-areas:
+      "mImg  mImg mText"
+      "mImg  mImg mText"
+      "sText sImg mText"
+      "sText sImg mText";
+    @media (max-width: 1024px) {
+      grid-template-areas:
+        "mImg"
+        "mText"
+        "sText";
+    }
+  }
+  &.picRight {
+    grid-template-areas:
+      "mText mImg mImg"
+      "mText mImg mImg"
+      "mText sImg sText"
+      "mText sImg sText";
+    @media (max-width: 1024px) {
+      grid-template-areas:
+        "mImg"
+        "mText"
+        "sText";
+    }
+  }
+
+  .text {
+    width: 80%;
+    &.main {
+      grid-area: mText;
+      justify-self: center;
+      .textTitle {
+        text-align: center;
+        font-size: var(--text-superhero);
+        padding: var(--space-lg);
+      }
+    }
+    &.secondary {
+      grid-area: sText;
+      justify-self: center;
+      padding: 20% 0;
+    }
+  }
+  .photo {
+    border: var(--space-lg) solid var(--white);
+    &.main {
+      grid-area: mImg;
+      background-color: lightblue;
+      img {
+      }
+    }
+    &.secondary {
+      grid-area: sImg;
+      background-color: lightcoral;
+      transform: scaleY(1.25);
+      // transform: translateY(-27%);
+      transform-origin: bottom;
+      @media (max-width: 1024px) {
+        display: none;
+      }
+      img {
+      }
+    }
+  }
+}
+
+.recommendationsBlock {
+  margin: var(--size-input) 0;
+  margin-bottom: calc(2 * var(--size-input));
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    margin-top: 0;
+  }
+}
+.recommendationsTitle {
+  padding: var(--size-input);
+  font-size: var(--text-header);
+  text-transform: lowercase;
+  font-weight: var(--bold);
+   @media (max-width: 1024px) {
+    padding-top: 0;
+    text-align: center;
+  }
+}
+.recommendedProductsContainer {
+  display: grid;
+  grid-template-columns: var(--product-grid);
+}

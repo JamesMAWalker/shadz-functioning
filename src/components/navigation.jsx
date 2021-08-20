@@ -103,7 +103,7 @@ export function Navigation({ className }) {
         duration={1}
         key="face"
         className={navLink}
-        to="/products/"
+        to="/faceshapes/"
       >
         face shapes
       </AniLink>

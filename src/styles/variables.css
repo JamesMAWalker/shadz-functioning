@@ -94,6 +94,8 @@
   --text-2xl: 24px;
   --text-3xl: 32px;
   --text-4xl: 48px;
+  --text-5xl: 64px;
+  --text-6xl: 72px;
 
   /* role-based tokens */
 
@@ -116,6 +118,7 @@
   --text-color-secondary: var(--grey-50);
   --text-color-inverted: var(--white);
   /* size */
+  --text-superhero: var(--text-5xl);
   --text-hero: var(--text-4xl);
   --text-header: var(--text-3xl);
   --text-display: var(--text-2xl);
