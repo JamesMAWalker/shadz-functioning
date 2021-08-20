@@ -111,7 +111,7 @@ export function MobileNavigation({ toggleMenu, menuOpen }) {
         bg="var(--primary)"
         key="faces"
         className={`menu-link ${navLink}`}
-        to="/products/"
+        to="/faceshapes/"
         activeClassName={activeLink}
         onClick={toggleMenu}
       >
