@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 // Components
 import { ProductCard } from "../components/product-card"
@@ -88,14 +88,14 @@ const FaceShapes = () => {
                 </p>
               </div>
               <div className={`${photo} ${pMain}`}>
-                <img src="" alt="" />
+                {shape.mImg}
               </div>
               <div className={`${photo} ${pSecondary}`}>
-                <img src="" alt="" />
+                {shape.sImg}
               </div>
               <div className={`${text} ${tSecondary}`}>
                 <p className={textContent}>
-                  <b>A high collared coat</b>{" "}
+                  <b>{shape.secondaryText.bold}</b>{" "}
                   {shape.secondaryText.content.map((block) => (
                     <>
                       <span>{block}</span>
@@ -107,7 +107,9 @@ const FaceShapes = () => {
               </div>
             </section>
             <div className={recommendationsBlock}>
-              <h4 className={recommendationsTitle}>{shape.title} suggestions</h4>
+              <h4 className={recommendationsTitle}>
+                {shape.title} suggestions
+              </h4>
               <div className={recommendedProductsContainer}>
                 {products
                   .filter((p) => p.productType === `${shape.recommendedType}`)
@@ -120,7 +122,43 @@ const FaceShapes = () => {
           </>
         )
       })}
-      
+      <div className={faceShapeDetails}>
+        <h2 className={detailsHeader}>universal style considerations</h2>
+        <p className={detailsContent}>
+          Faceshape is a helpful starting point, but don’t let it stop you from
+          experimenting with styles outside the typical recommendations. The
+          most important thing to consider is the vibe you’re going for with
+          your overall look. You wouldn’t wear your running glasses to the club,
+          no matter how well they fit your face shape!
+          <br />
+          <br />
+          Color is an aspect of sunglasses we don’t often consider closely
+          enough. A good starting point is to find out if you have a warmer or
+          cooler undertone to your skin. Look at the veins on the underside of
+          your wrist: if they appear greenish then you’ve got a warmer
+          undertone, if they’re more blue-purple, then your undertone is likely
+          cooler. Use this as a point of contrast and choose blues, greens, or
+          silver if you’re on the warmer end. Gold, amber, and more rosy hues
+          provide good subtle contrast for those with cooler under tones
+          <br />
+          <br />
+          Also consider the practical side of eyewear. If you’re planning for a
+          day in the sun, choose a style that will offer more protection, and
+          more coverage - darker, oversized frames are your friend. If you know
+          you’ll be wearing your glasses all day, choose something frameless,
+          lighter weight will help keep you comfortable over long periods.
+          <br />
+          <br />
+          Whatever you do, don’t categorize yourself out of freedom of choice.
+          Almost any frame can work on any face given the right set of
+          complements. Experiment with all the different choices - there’s no
+          better way to find what suits you best.
+          <br />
+          <br />
+          Check out our <Link style={{ color: "var(--primary)"}} to="/collections">collections page</Link> for some inspiration.
+        </p>
+      </div>
+      <div className="extra-padding"></div>
     </div>
   )
 }

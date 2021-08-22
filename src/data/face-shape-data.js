@@ -1,3 +1,6 @@
+import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image';
+
 export const faceShapes = [
   {
     title: "Round Faces",
@@ -31,6 +34,8 @@ export const faceShapes = [
         naturalistic. Organic colors and flowing fabrics are key.`,
       ],
     },
+    mImg: <StaticImage src="../images/face-shapes/round-1.png" />,
+    sImg: <StaticImage src="../images/face-shapes/round-2.png" />,
     recommendedType: "SQUARE",
   },
   {
@@ -48,9 +53,12 @@ export const faceShapes = [
     secondaryText: {
       bold: "Accessories for this",
       content: [
-        `face shape should generally be of a softer, more relaxed style. A flowing dress or anything with a lower cut will bring balance. Or, for a more professional lok you can play up the more modern, angular style with a well cut blazer or similar.`,
+        `face shape should generally be of a softer, more relaxed style. A flowing dress or anything with a lower cut will bring balance.`,
+        ` Or, for a more professional lok you can play up the more modern, angular style with a well cut blazer or similar.`,
       ],
     },
+    mImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/square-1.png" />,
+    sImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/square-2.png" />,
     recommendedType: "ROUND",
   },
   {
@@ -66,9 +74,54 @@ export const faceShapes = [
     secondaryText: {
       bold: "Accessories can play",
       content: [
-        `a big role with the oblong face. Harder lines and a more voluminous hairstyle can frame the face, `,
+        `a big role with the oblong face. Try a set of eyecatching earrings or add  some volume to your hairstyle. `,
+        `In general look for items that horizontally frame the face, especially around the lower portion.`,
       ],
     },
+    mImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/oblong-1.png" />,
+    sImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/oblong-2.png" />,
     recommendedType: "CATEYE",
+  },
+  {
+    title: "Heart Shaped",
+    mainText: {
+      bold: "The heart shaped face",
+      content: [
+        `is widest towards the cheekbones and forehead, and more narrow at the chin and jawline. The common wisdom for this shape is to choose accessories that balance the size difference between the top and bottom portions of the face. `,
+        `Because glasses sit between the two hemispheres, they are a great tool for smoothing out the transition between the two. Choosing a rounded frame can de-emphasize forehead width while flowing into the more narrow jawline without looking too wide for everything below the cheekbones. `,
+        `Two tone and gradient frames are a great way to emphasize length, as they break the shape into two separate halves. The stronger the contrast the more pronounced this effect is.`,
+      ],
+    },
+    secondaryText: {
+      bold: "Adding emphasis to",
+      content: [
+        `the lower half of the face is one of the easiest ways to balance the heart. Sunglasses that sit lower on the face can do this by obscuring the position of the eyes.`,
+        `A light scarf or even a bolder shade of lipstick can also help to draw attention towards the lower part of the face.`,
+      ],
+    },
+    mImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/heart-1.png" />,
+    sImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/heart-2.png" />,
+    recommendedType: "AVIATOR",
+  },
+  {
+    title: "Oval Faces",
+    mainText: {
+      bold: "The oval face",
+      content: [
+        `is similar to the heart, but its width is greatest at the middle of the face, narrowing at both the forehead and chin. This type varies in length to width ratio, but is characterized by vertical balance. This balance means you can play with a lot of different styles, but this also means that the best choice for you is less obvious.`,
+        `If your cheekbones are especially prominent you can choose frames that flow into them, mimicing their shape and integrating rather than contrasting them.`,
+        `If your face tends towards the longer end of the spectrum then try a style with a more bold and intereting shape. These will provide a point of interest in the center of the face and balance the length.
+The classic Clubmaster frame or any half frame design are a great choice for this effect.`,
+      ],
+    },
+    secondaryText: {
+      bold: "Because this shape",
+      content: [
+        ` is so versatile, you’ll want to look to the shape of your features for contrast. Sharper, more mousey features always work well with rounded styles, and of course rounded features will play off of angular styles.`,
+      ],
+    },
+    mImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/oval-1.png" />,
+    sImg: <StaticImage objectFit="cover" objectPosition="center" layout="constrained" formats={["auto", "webp"]} placeholder="tracedSVG" src="../images/face-shapes/oval-2.png" />,
+    recommendedType: "CLASSIC",
   },
 ]
