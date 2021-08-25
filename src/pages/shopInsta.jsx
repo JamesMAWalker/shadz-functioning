@@ -47,7 +47,9 @@ const ShopInsta = ({ data }) => {
 
   // set modal content
   const getProductFromPost = (caption) => {
-    // dev version: return variants[8]
+    // dev: return variants[8]
+    
+    // production:
     return variants.filter(({ node: v }) => {
       return caption
         .toLowerCase()

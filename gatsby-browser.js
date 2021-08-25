@@ -20,7 +20,7 @@ import "./src/styles/global.scss"
 import { scrollWrap } from './src/layouts/index.module.scss';
 
 const httpLink = new HttpLink({
-  uri: "https://sunkissed-heroku-db.herokuapp.com/v1/graphql",
+  uri: process.env.GATSBY_HASURA_GRAPHQL_URL,
   fetch,
 })
 

@@ -36,7 +36,7 @@
 .instaModal {
   z-index: var(--level-three);
   position: fixed;
-  min-height: -webkit-fill-available;
+  min-height: 100vh;
   width: 67.1vw;
   top: 0;
   left: 19vw;
@@ -48,12 +48,16 @@
   border-left: 2px solid var(--grey-10);
   opacity: 0;
   transform: translateY(20vh);
+  @media (max-width: 1024px) {
+    min-height: -webkit-fill-available;
+
+  }
 }
 
 .postImage {
   position: relative;
   width: 65%;
-  height: 100%;
+  height: 100vh;
   div,
   img {
     height: 100%;
@@ -66,7 +70,7 @@
 .detailsSection {
   position: relative;
   width: 35%;
-  height: 100%;
+  height: 100vh;
   padding: var(--size-gutter-raw);
   display: flex;
   flex-direction: column;

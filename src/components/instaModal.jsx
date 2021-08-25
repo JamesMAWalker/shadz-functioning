@@ -48,8 +48,10 @@ import {
 
 export const InstaModal = ({ hideModal, post, getProductFromPost }) => {
   const { modalOpen } = useContext(LayoutContext)
+  
+  // production: 
   const productInPost = getProductFromPost(post.caption)[0].node
-  // const productInPost = getProductFromPost(post.caption).node
+  // dev: const productInPost = getProductFromPost(post.caption).node
 
   const postImageData = getImage(
     post.localImage.childImageSharp.gatsbyImageData
