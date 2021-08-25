@@ -11,6 +11,7 @@ import {
   InMemoryCache,
 } from "@apollo/client"
 import fetch from "isomorphic-fetch"
+import LogRocket from 'logrocket';
 
 // styles
 import "./src/styles/reset.css"
@@ -31,6 +32,12 @@ const client = new ApolloClient({
 const onRedirectCallback = (appState) => {
   // Use Gatsby's navigate method to replace the url
   navigate(appState?.returnTo || "/", { replace: true })
+}
+
+exports.onInitialClientRender = () => {
+  if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
+    LogRocket.init("lftncg/shadz-boutique")
+  }
 }
 
 export const wrapRootElement = ({ element }) => {
