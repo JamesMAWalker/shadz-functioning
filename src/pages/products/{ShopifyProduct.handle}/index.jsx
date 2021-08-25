@@ -73,7 +73,7 @@ export default function Product({
   useEffect(() => {
     setIsMobile(window.innerWidth <= 1024)
   }, [isMobile, windowSize])
-  
+
   const {
     options,
     variants,
@@ -451,13 +451,15 @@ export default function Product({
 }
 
 export const query = graphql`
-  query($id: String!, $productType: String!) {
-    product: shopifyProduct(id: { eq: $id }) {
+  # query($id: String!, $handle: String!) {
+  query($handle: String!) {
+    # product: shopifyProduct(id: { eq: $id }) {
+    product: shopifyProduct(handle: { eq: $handle }) {
       title
       description
       productType
       productTypeSlug: gatsbyPath(
-        filePath: "/products/{ShopifyProduct.productType}"
+        filePath: "/products/{ShopifyProduct.handle}"
       )
       tags
       priceRangeV2 {
@@ -492,15 +494,13 @@ export const query = graphql`
         id
       }
     }
-    suggestions: allShopifyProduct(
-      limit: 3
-      filter: { productType: { eq: $productType }, id: { ne: $id } }
-    ) {
-      nodes {
-        ...ProductCard
-      }
-    }
+    # suggestions: allShopifyProduct(
+    #   limit: 3
+    #   filter: { productType: { eq: $productType }, id: { ne: $id } }
+    # ) {
+    #   nodes {
+    #     ...ProductCard
+    #   }
+    # }
   }
 `
-
-
