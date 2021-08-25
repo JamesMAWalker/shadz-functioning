@@ -34,7 +34,7 @@ const onRedirectCallback = (appState) => {
   navigate(appState?.returnTo || "/", { replace: true })
 }
 
-exports.onInitialClientRender = () => {
+const onInitialClientRender = () => {
   if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
     LogRocket.init("lftncg/shadz-boutique")
   }
