@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react"
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react"
 import { useMutation, useQuery, gql } from "@apollo/client"
 import debounce from "lodash.debounce"
+import gsap from 'gsap/gsap-core';
 
-import { Loading } from '../components/loading'
+// Components
+import { Loading } from "../components/loading"
 import WishlistItems from "../components/wishlist-items"
 
+// Styles
 import { wishlistContainer, noItems } from "./wishlist.module.scss"
 
 const CUSTOMER_QUERY = gql`
@@ -43,9 +46,7 @@ const Wishlist = () => {
     variables: { _email: email },
   })
 
-  const [updateDbWishlist] = useMutation(
-    UPDATE_WISHLIST
-  )
+  const [updateDbWishlist] = useMutation(UPDATE_WISHLIST)
 
   useEffect(() => {
     if (customerData !== undefined) {
@@ -69,12 +70,12 @@ const Wishlist = () => {
       customerData !== undefined ? customerData.Customers[0].wishlist : null
 
     if (isAuthenticated && dbWishlist.includes(id)) {
-      console.log("id from wlpage remove fn: ", id)
+      // console.log("id from wlpage remove fn: ", id)
       const itemRemovedWishlist = dbWishlist.filter((wli) => wli !== id)
       const postGresFormattedWishlist = `{${itemRemovedWishlist.map(
         (wli) => wli
       )}}`
-      console.log("postGresFormattedWishlist: ", postGresFormattedWishlist)
+      // console.log("postGresFormattedWishlist: ", postGresFormattedWishlist)
 
       updateDbWishlist({
         variables: {
@@ -82,7 +83,14 @@ const Wishlist = () => {
           wishlist: postGresFormattedWishlist,
         },
       })
-        .then(() => refetch())
+        .then(() => {
+          refetch().then(() =>(
+            gsap.set(`.card`, {
+              clearProps: "opacity",
+              parseTransform: true,
+            })
+          ))
+        })
         .catch((err) => console.log("error from callback: ", err))
     }
   })

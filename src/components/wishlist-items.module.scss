@@ -19,9 +19,11 @@
 }
 
 .wishlistContainer {
+  height: max-content;
   display: grid;
   gap: var(--space-xl) var(--space-lg);
   grid-template-columns: var(--product-grid);
+  overflow: visible;
 }
 
 .trendingLink {

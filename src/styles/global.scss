@@ -59,6 +59,7 @@ html, body *:hover {
 .tl-edges .tl-wrapper {
   height: 100%;
   width: 100%;
+  overflow-y: visible !important;
 }
 
 .extra-padding {

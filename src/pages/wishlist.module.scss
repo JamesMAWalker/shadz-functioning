@@ -1,6 +1,9 @@
 .wishlistContainer {
   opacity: 1;  
   margin-bottom: var(--vp-md);
+  overflow: visible;
+  transition: var(--transition-2);
+  
 }
 
 .noItems {

@@ -1,9 +1,12 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import gsap from "gsap/gsap-core"
 
-import { AddToCart } from '../components/add-to-cart'
-import { formatPrice } from '../utils/format-price'
+// Components
+import { AddToCart } from "../components/add-to-cart"
+import { formatPrice } from "../utils/format-price"
 
+// Styles
 import {
   wlItem,
   removeBtn,
@@ -12,7 +15,7 @@ import {
   itemName,
   itemPrice,
   variantName,
-  addToCartWrapper
+  addToCartWrapper,
 } from "./wl-item.module.scss"
 
 const WishlistItem = ({ itemData, updateWishlist }) => {
@@ -25,13 +28,12 @@ const WishlistItem = ({ itemData, updateWishlist }) => {
     storefrontId,
     availableForSale,
     price: variantPrice,
-
   } = itemData
 
   const removeFromWL = () => {
     updateWishlist(id)
   }
-  
+
   const price = formatPrice(
     priceRangeV2.minVariantPrice.currencyCode,
     variantPrice
@@ -39,10 +41,19 @@ const WishlistItem = ({ itemData, updateWishlist }) => {
 
   const imageData = images[0].gatsbyImageData
   const productName = displayName.split("-")[0]
-  
+
+  const animateCardOut = () => {
+    gsap.to(`.card-${id}`, {
+      opacity: 0,
+      onComplete: () => {
+        removeFromWL()
+      },
+    })
+  }
+
   return (
-    <div className={wlItem}>
-      <button onClick={removeFromWL} className={removeBtn}>
+    <div className={`${wlItem} card card-${id}`}>
+      <button onClick={animateCardOut} className={removeBtn}>
         <p>remove from wishlist</p> &nbsp; <span>&times;</span>
       </button>
       <div className={imageWrapper}>

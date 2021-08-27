@@ -1,6 +1,6 @@
 .wlItem {
   max-width: 400px;
-  max-height: 50vh;
+  max-height: 60vh;
   height: 100%;
   width: 100%;
   cursor: pointer;
@@ -9,6 +9,7 @@
   text-decoration: none;
   padding: calc(var(--size-gutter-raw) / 1);
   margin-bottom: var(--size-gutter-raw);
+  transition: var(--transition-2);
   &:hover {
     .removeBtn,
     .addToCartWrapper {
