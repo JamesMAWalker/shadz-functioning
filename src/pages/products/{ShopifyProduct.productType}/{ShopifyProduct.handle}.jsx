@@ -336,7 +336,7 @@ export default function Product({
                     <span
                       tabIndex={0}
                       role="button"
-                      // onClick={addRemoveFromWishlist}
+                      onClick={addRemoveFromWishlist}
                       onTouchStart={isMobile && addRemoveFromWishlist}
                       aria-label={
                         itemInWishlist
