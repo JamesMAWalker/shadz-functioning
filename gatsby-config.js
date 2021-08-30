@@ -38,6 +38,7 @@ module.exports = {
         access_token: process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN,
       },
     },
+    "gatsby-plugin-vercel",
     "gatsby-plugin-ngrok-tunneling",
     "gatsby-plugin-transition-link",
     "gatsby-plugin-image",
