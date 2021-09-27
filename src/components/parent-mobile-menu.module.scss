@@ -29,6 +29,7 @@
   height: calc(var(--size-input) * 1.2);
   width: calc(100vw - (4 * var(--space-md)));
   padding: 0 var(--space-md);
+  padding-top: 2%;
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
   grid-template-areas: "logo cart menu";
