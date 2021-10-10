@@ -6,6 +6,7 @@ import { MoreButton } from "../../components/more-button"
 import { title } from "./index.module.scss"
 
 export default function Products({ data: { products } }) {
+  
   return (
     <>
       <Seo title="All Products" />

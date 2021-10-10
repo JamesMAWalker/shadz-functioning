@@ -30,7 +30,7 @@ export default function IndexPage({ data }) {
   const images = data.photos.edges.map((p) => getImage(p.node))
 
   const collectionMatrix = {
-    0: `/products/shield/shield`,
+    0: `/products/shield`,
     1: `/products/square/lauren-sunglasses`,
     2: `/products/shield/shield`,
     3: `/products/classic/solo`,

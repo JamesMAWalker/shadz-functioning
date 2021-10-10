@@ -13,7 +13,7 @@ export const CursorProvider = ({ children }) => {
   const [cursorState, setCursorState] = useState("default")
   
   const cursorOnProduct = (item, price) => {
-    console.log(item)
+    
     setCursorState("onProduct")
     setCursorState({ type: "onProduct", content: item, price })
   }
