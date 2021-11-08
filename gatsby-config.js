@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: "shadz-eyewear",
     siteTitleDefault: "shadz-eyewear",
-    siteUrl: "https://the-shadz.netlify.app/",
+    siteUrl: "https://www.theshadz.com/",
     hrefLang: "en",
     siteDescription: "An eCommerce site using Shopify's Storefront API.",
     siteImage: "/default-og-image.jpg",
@@ -38,6 +38,7 @@ module.exports = {
         access_token: process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN,
       },
     },
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-vercel",
     "gatsby-plugin-ngrok-tunneling",
     "gatsby-plugin-transition-link",
